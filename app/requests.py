@@ -5,3 +5,5 @@ from .models import Source
 
 #Getting api key
 api_key = None
+#Getting the news base url
+base_url = None
