@@ -1,6 +1,6 @@
 import os
 
-class Config:
+class Config: #parent Config class contains configurations used in both production and development stages. 
 
     # NEWS_API_BASE_URL = 
 
@@ -8,7 +8,7 @@ class Config:
     SECRET_KEY = os.environ.get('0719233c9b5e4e3a8337441994ed5d29')
     #os.environ.get function gets MOVIE_API_KEY and SECRET_KEY which we will set as environment variables
 
-class ProdConfig(Config):
+class ProdConfig(Config): #ProdConfig subclass contains configurations used in production stages of our application
     '''
     Production configuration child class 
 
@@ -17,7 +17,7 @@ class ProdConfig(Config):
     '''
     pass
 
-class DevConfig(Config):
+class DevConfig(Config): #DevConfig subclass contains configurations used in development stages of our application
     '''
     Development configuration child class
 
@@ -25,5 +25,11 @@ class DevConfig(Config):
         Config: The parent configuration class with General configuration settings
     '''
 
-    DEBUG = True
+    DEBUG = True #Enables debug mode in our application
 
+#All subclass configs inherit from (Config)parent Class
+
+config_options = {
+    'development':DevConfig,
+    'production':ProdConfig
+} #Dictionary config_options helps us access different configuration option class
