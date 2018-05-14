@@ -7,3 +7,5 @@ from .models import Source
 api_key = None
 #Getting the news base url
 base_url = None
+
+def configure_request(app):
