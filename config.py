@@ -8,5 +8,22 @@ class Config:
     SECRET_KEY = os.environ.get('0719233c9b5e4e3a8337441994ed5d29')
     #os.environ.get function gets MOVIE_API_KEY and SECRET_KEY which we will set as environment variables
 
+class ProdConfig(Config):
+    '''
+    Production configuration child class 
 
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    pass
+
+class DevConfig(Config):
+    '''
+    Development configuration child class
+
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+
+    DEBUG = True
 
