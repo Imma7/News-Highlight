@@ -13,6 +13,11 @@ class Article:
         self.urlToImage = urlToImage
         self.publishedAt = publishedAt
 
+    def get_article(self)
+        '''
+        Function that gets the json response to our url request
+        '''
+
 class Source:
     '''
     Sources class to define sources objects
