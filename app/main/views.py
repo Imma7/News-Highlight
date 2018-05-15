@@ -8,8 +8,11 @@ from ..models import Source
 
 #Views
 @main.route('/') #Define route decorator with main blueprint instance
-def article(id):
+def article(id): #Article function that 
     '''
-    View root page function that returns the index page and its data
+    View article page function that returns the articles details page and its data
     '''
-    return render_template('article.html') #Returns response of article.html
+
+    article = get_article(id)
+    
+    return render_template('article.html', title = title, article = article) #Returns response of article.html
