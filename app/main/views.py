@@ -7,7 +7,7 @@ from ..models import Source
 
 
 #Views
-@main.route('/') #Define route decorator with main blueprint instance
+@main.route('/article') #Define route decorator with main blueprint instance
 def article(id): #Article function that 
     '''
     View article page function that returns the articles details page and its data
@@ -15,4 +15,14 @@ def article(id): #Article function that
 
     article = get_article(id)
     
-    return render_template('article.html', title = title, article = article) #Returns response of article.html
+    return render_template('article.html', article = article) #Returns response of article.html
+
+@main.route('/source')
+def source(category):
+    '''
+
+    '''
+
+    source = get_source(category)
+
+    return render_template('source.html', source = source)

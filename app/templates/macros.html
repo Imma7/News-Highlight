@@ -1,5 +1,8 @@
-{% macro display(article_list) %}
+{% macro displayarticles(article_list) %}
     {% for article in article_list %}      
-
+        <li>{{article.title}}</li>
+        <li>{{article.name}}</li>
+        <img src="{{article.urlToImage}}" alt="">
+        <li>{{article.description}}</li>
     {% endfor %}
 {% endmacro %}
