@@ -2,10 +2,11 @@ import os #Inbuilt method that allows access to the operating system variables l
 
 class Config: #parent Config class contains configurations used in both production and development stages. 
 
-    # NEWS_API_BASE_URL = 
+    NEWS_ARTICLE_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey={}'
+    NEWS_SOURCE_API_BASE_URL ="https://newsapi.org/v2/sources?apiKey={}"
 
-    NEWS_API_KEY = os.environ.get('NEWS_API_KEY') #f80d5dfbac424cbb9ebffcc23c378ffd
-    SECRET_KEY = os.environ.get('SECRET_KEY') #0719233c9b5e4e3a8337441994ed5d29
+    NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
+    SECRET_KEY = os.environ.get('SECRET_KEY') 
     #os.environ.get function gets MOVIE_API_KEY and SECRET_KEY which we will set as environment variables
 
 class ProdConfig(Config): #ProdConfig subclass contains configurations used in production stages of our application
