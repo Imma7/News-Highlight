@@ -77,3 +77,27 @@ def get_source(category):
                 source_results = process_sources(source_results_list)
 
         return source_results 
+
+def process_sources(source_list):
+        '''
+        Function  that processes the source result and transform them to a list of Objects
+
+        Args:
+        article_list: A list of dictionaries that contain source details
+
+        Returns :
+        source_results: A list of movie objects
+        '''
+        source_results = []
+        for source_item in source_list:
+            id = source_item.get('id')
+            name = source_item.get('name')
+            description = source_item.get('description')
+            url = source_item('url')
+            category = source_item('category')
+            language = source_item('language')
+            country = source_item('country')
+
+        return source_results
+
+    
