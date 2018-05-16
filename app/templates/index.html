@@ -1,24 +1,18 @@
 {% extends 'base.html' %}
-{% import 'macros.html' as macro %}
+
 
 {% block content %}
-
-{% include 'navbar.html' %}
-
+<hr>
 <div class="container">
 <div class="col-md-12">
-    <h2> WELCOME TO NEWS HIGHLIGHTS </h2>
+    <h1 class="text-center"><center> WELCOME TO NEWS HIGHLIGHTS </center></h1>
 </div>
 
 <hr>
 </div>
-
-<div class="container">
-
+    
+<div class="container-img">
+        <center><img src="{{ url_for('static', filename='images/NewsLogo.png') }}" alt=""></center>
 </div>
-
-
-
-
 
 {% endblock %}

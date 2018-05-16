@@ -12,6 +12,9 @@ class Article:
         self.url = url
         self.urlToImage = urlToImage
         self.publishedAt = publishedAt
+        
+    def __repr__(self):
+        return "Article : {}".format(self.name)
 
     
 
@@ -27,3 +30,6 @@ class Source:
         self.category = category
         self.language = language
         self.country = country
+
+    def __repr__(self):
+        return "Source : {}".format(self.name)

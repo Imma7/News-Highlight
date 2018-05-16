@@ -1,14 +1,6 @@
-{% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
-{% block content %}
+<h1 class="text-center"><center> ARTICLES </center></h1>
+<hr>
 
-<div class = "container">
-    <h3> News Articles </h3>
-    <hr>
-    <ul>
-        {{ macro.displayarticles(article)}}
-    </ul>
-</div>
-
-{% endblock %}
+{{ macro.displayArticles(articles) }}

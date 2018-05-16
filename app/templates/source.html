@@ -1,15 +1,22 @@
-{% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
 {% block content %}
 
-<div class = "container">
-    <h3> News Sources </h3>
+<div class = "container-fluid">
+    <h1 class="text-center"><center> NEWS SOURCES </center></h1>
     <hr>
-    <br>
-    <ul>
-        {{ macro.displaysources(source)}}
-    </ul>
-</div>
+    
+    {% for source in sources %}>
+    <h2><strong>{{ source.id }}</strong></h2>
+    <p>{{ source.description }}</p>
+    <h4>{{ source.category }}</h4>
+    <h4><em>{{ source.country }}</em></h4>
+    <hr>
+</div>     
+    {% endfor %}
+   
+
 
 {% endblock %}
+
+
