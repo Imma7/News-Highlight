@@ -1,10 +1,35 @@
-from flask import render_template
-from app import app
+#Files imports
+from flask import render_template,request,redirect,url_for
+# from app import app
+from . import main
+from ..requests import get_source,get_article
+from ..models import Source
+
 
 #Views
-@app.route('/')
+
+@main.route("/")
 def index():
+    return render_template("index.html")
+
+@main.route('/articles') #Define route decorator with main blueprint instance
+def articles(): #Article function that 
     '''
-    View root page function that returns the index page and its data
+    View article page function that returns the articles details page and its data
     '''
-    return render_template('index.html')
+
+    articles = get_article()
+    return render_template('article.html', articles = articles) #Returns response of article.html
+
+    
+
+@main.route('/sources')
+def source():
+    '''
+
+    '''
+    sources = get_source()
+    print(sources)
+   
+    return render_template('source.html', sources = sources)
+
