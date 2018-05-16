@@ -7,7 +7,6 @@ from ..models import Source
 
 
 #Views
-
 @main.route("/")
 def index():
     return render_template("index.html")
@@ -32,4 +31,3 @@ def source():
     print(sources)
    
     return render_template('source.html', sources = sources)
-
